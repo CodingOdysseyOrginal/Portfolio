@@ -1,9 +1,19 @@
-
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <footer className="footer">
+      <div className="bottom-footer">
+        <p>
+          Copyright &copy;{" "}
+          <a href="#home" className="footer-link">
+            Christopher O'Connor
+          </a>{" "}
+          - All rights reserved
+        </p>
+      </div>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
