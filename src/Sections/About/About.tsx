@@ -1,10 +1,10 @@
+import "./About.css";
 
-import './About.css'
-
-
-
-export const About = () => {
+const About = () => {
   return (
-    <div id='About' className='About'>About</div>
-  )
-}
+    <div id="About" className="About">
+      About
+    </div>
+  );
+};
+export default About;
