@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./Home.css";
 import Myself from "./Img/me.jpg";
 import Typed from "typed.js";
