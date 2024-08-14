@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-const NavBar = () => {
+const Navbar = () => {
   return (
     <nav className="sidebar">
       <div className="navTitle">
@@ -49,4 +49,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;
