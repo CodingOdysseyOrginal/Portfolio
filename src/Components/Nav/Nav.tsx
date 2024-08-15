@@ -1,6 +1,8 @@
 import { Link } from "react-scroll";
 import "./Nav.css";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const Nav = () => {
   return (
@@ -34,12 +36,12 @@ const Nav = () => {
       <div className="social-icons">
         <div className="icon">
           <a href="https://www.linkedin.com/in/christopher-o%E2%80%99connor-859b68184/" target="_blank" rel="noopener noreferrer" className="social-link">
-            
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
         </div>
         <div className="icon">
           <a href="https://github.com/CodingOdysseyOrginal" target="_blank" rel="noopener noreferrer" className="social-link">
-            
+            <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>
         </div>
       </div>
