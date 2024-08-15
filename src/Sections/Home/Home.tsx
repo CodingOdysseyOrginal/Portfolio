@@ -21,7 +21,7 @@ export function Home() {
   }, []);
 
   return (
-    <section id="home">
+    <section id="home" className="home">
       <div className="featured-text">
         <div className="featured-text-card">
           <span>Christopher O'Connor</span>

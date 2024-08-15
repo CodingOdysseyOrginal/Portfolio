@@ -1,18 +1,18 @@
 
   
-  #home {
+  .home {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
     text-align: center;
-    padding: 50px 20px;
+    padding: 50px 50px;
     background: linear-gradient(to right, #007bff, #00aaff);
     color: white;
     min-height: 100vh;
   }
   
-  #home div {
+  .home div {
     margin-bottom: 20px;
   }
   

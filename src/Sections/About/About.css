@@ -1,4 +1,107 @@
-.About{
-    background-color: brown;
-    height: 150vh;
-}
+/* About.css */
+
+.About {
+    padding: 60px 20px;
+    background: linear-gradient(to right, #007bff, #00aaff);
+    text-align: center;
+  }
+  
+  .About h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+  }
+  
+  .column {
+    flex: 1;
+    max-width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .column:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #22354a, #00aaff);
+    border-radius: 15px;
+
+  }
+  
+  .about-info,
+  .skills-box {
+    width: 100%;
+    min-height: 320px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-info:hover,
+  .skills-box:hover {
+    border-color: #007bff; 
+    box-shadow: 0 12px 20px rgba(0, 123, 255, 0.3); 
+  }
+  
+  .skills-header h3,
+  .about-info h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; 
+  }
+  
+  .skills-list span {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skills-list span:hover {
+    transform: scale(1.15); 
+    background-color: #004085; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .column {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .about-info,
+    .skills-box {
+      min-height: auto;
+    }
+  }
+  
