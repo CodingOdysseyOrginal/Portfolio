@@ -4,11 +4,12 @@ import "./App.css";
 import Contact from "./Sections/Contact/Contact";
 import About  from "./Sections/About/About";
 import Footer from "./Components/Footer/Footer";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
     <div>
-     
+     <Navbar/>
       <div className="main-content">
         <Home />
         <About />
