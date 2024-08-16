@@ -1,8 +1,8 @@
 import { Link } from "react-scroll";
 import "./Nav.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faHome, faUser, faBriefcase, faEnvelope } from '@fortawesome/free-solid-svg-icons'; 
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const Nav = () => {
   return (
@@ -14,22 +14,26 @@ const Nav = () => {
       <ul className="nav-links">
         <li>
           <Link to="home" spy={true} smooth={true}>
-            Home
+            <FontAwesomeIcon icon={faHome} className="nav-icon" />
+            <span>Home</span>
           </Link>
         </li>
         <li>
           <Link to="About" spy={true} smooth={true}>
-            About
+            <FontAwesomeIcon icon={faUser} className="nav-icon" />
+            <span>About</span>
           </Link>
         </li>
         <li>
           <Link to="Projects" spy={true} smooth={true}>
-            Projects
+            <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
+            <span>Projects</span>
           </Link>
         </li>
         <li>
           <Link to="Contact" spy={true} smooth={true}>
-          Contact me!
+            <FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
+            <span>Contact me!</span>
           </Link>
         </li>
       </ul>

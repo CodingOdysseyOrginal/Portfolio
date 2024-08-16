@@ -1,97 +1,159 @@
-
-  
-  .home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    text-align: center;
-    padding: 50px 50px;
-    background: linear-gradient(to right, #007bff, #00aaff);
-    color: white;
-    min-height: 100vh;
-  }
-  
-  .home div {
-    margin-bottom: 20px;
-  }
-  
-  .featured-text-card span {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #fff;
-  }
-  
-  .featured-name p {
-    font-size: 1.5rem;
-    margin-top: 10px;
-  }
-  
-  .featured-text-info p {
-    font-size: 1.2rem;
-    margin-top: 20px;
-    max-width: 600px;
-    line-height: 1.5;
-  }
-  
-  .featured-text-btn {
-    margin-top: 30px;
-  }
-  
-  .featured-text-btn .btn {
-    background-color: #fff;
-    color: #007bff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border: 5px solid #007bff;
-
-  }
-  
-  .featured-text-btn .btn:hover {
-    background-color: #007bff;
-    color: #fff;
-    border: 5px solid white;
-
-  }
-  
-  .featured-image .image {
-    margin-top: 20px;
-    max-width: 350px;
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #007bff, #00aaff);
+  color: white;
+  min-height: 100vh;
+  flex-wrap: wrap;
 }
-  
+
+.featured-text {
+  flex: 1;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.featured-image {
+  flex: 1;
+  max-width: 350px;
+  margin-top: 20px;
+}
+
+.featured-text-card span {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  margin-bottom: 10px; 
+}
+
+.featured-name p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 10px; 
+}
+
+.featured-text-info p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  max-width: 600px;
+  line-height: 1.5;
+  margin: 0 auto;
+  margin-bottom: 20px; 
+}
+
+.featured-text-btn {
+  margin-top: 30px;
+}
+
+.featured-text-btn .btn {
+  background-color: #fff;
+  color: #007bff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 5px solid #007bff;
+}
+
+.featured-text-btn .btn:hover {
+  background-color: #007bff;
+  color: #fff;
+  border: 5px solid white;
+}
+
+.featured-image .image {
+  max-width: 100%;
+}
+
 .featured-image .image img {
-    margin: auto 0;
-    width: 380px;
-    height: 380px;
-    border-radius: 55% 45% 55% 45%;
-    overflow: hidden;
-    animation: imgFloat 7s ease-in-out infinite;
-    border: 5px solid white;
-  }
-  .image img{
-    width: 380px;
-    height: 380px;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: imgFloat 7s ease-in-out infinite;
+  border: 5px solid white;
 }
+
+.typedText {
+  color: #ffde59;
+  font-weight: bold;
+}
+
 @keyframes imgFloat {
-    50%{
-        transform: translateY(10px);
-        border-radius: 45% 55% 45% 55%;
-    }
-}
-  
-  .typedText {
-    color: #ffde59;
-    font-weight: bold;
+  50% {
+    transform: translateY(10px);
   }
-  
- 
-  
-  
-  
- 
-  
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    border-width: 5px;
+  }
+  50% {
+    border-width: 10px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    padding: 30px 10px;
+  }
+
+  .featured-text {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  .featured-image {
+    order: 1;
+  }
+
+  .featured-text-card span {
+    font-size: 2rem;
+  }
+
+  .featured-name p {
+    font-size: 1.2rem;
+  }
+
+  .featured-text-info p {
+    font-size: 1rem;
+  }
+
+  .featured-text-btn .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home {
+    padding: 80px 100px;
+  }
+
+  .featured-text-card span {
+    font-size: 3rem;
+  }
+
+  .featured-name p {
+    font-size: 2rem;
+  }
+
+  .featured-text-info p {
+    font-size: 1.4rem;
+  }
+
+  .featured-text-btn .btn {
+    font-size: 1.2rem;
+    padding: 12px 24px;
+  }
+}

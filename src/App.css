@@ -2,7 +2,11 @@
     margin-left: 250px;
 }
 
-
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 80px;
+    }
+}
 
 /* To Do List */
 
