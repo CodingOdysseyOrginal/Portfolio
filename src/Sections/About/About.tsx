@@ -2,7 +2,6 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import "./About.css";
 
-// Define animation variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
