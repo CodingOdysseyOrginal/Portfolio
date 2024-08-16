@@ -1,55 +1,164 @@
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 import "./About.css";
 
+// Define animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
+const slideInLeft = {
+  hidden: { x: -20, opacity: 0 },
+  visible: { x: 0, opacity: 1 }
+};
+
+const slideInRight = {
+  hidden: { x: 20, opacity: 0 },
+  visible: { x: 0, opacity: 1 }
+};
+
 const About: React.FC = () => {
+  
+  const { ref: headerRef, inView: headerInView } = useInView({
+    
+    threshold: 0.9
+  });
+
+  const { ref: infoRef, inView: infoInView } = useInView({
+   
+    threshold: 0.1
+  });
+
+  const { ref: skillsRef, inView: skillsInView } = useInView({
+    
+    threshold: 0.1
+  });
+
+  const skillSpans = [
+    { text: 'HTML', direction: 'left' },
+    { text: 'CSS', direction: 'right' },
+    { text: 'JavaScript', direction: 'left' },
+    { text: 'React', direction: 'right' },
+    { text: 'Tailwind', direction: 'left' },
+    { text: 'GitHub', direction: 'right' },
+    { text: 'Visual Studio Code', direction: 'left' },
+    { text: 'Express', direction: 'left' },
+    { text: 'Node', direction: 'right' },
+    { text: 'MongoDB', direction: 'left' },
+    { text: 'C#', direction: 'right' },
+    { text: 'ASP.NET', direction: 'left' },
+  ];
+
   return (
     <section id="About" className="About">
-      <div>
-        <h1>About Me</h1>
-      </div>
+      <motion.div
+        className="section-header"
+        ref={headerRef}
+        initial="hidden"
+        animate={headerInView ? "visible" : "hidden"}
+        variants={fadeInUp}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.h1
+          initial="hidden"
+          animate={headerInView ? "visible" : "hidden"}
+          variants={slideInLeft}
+          transition={{ duration: 0.5 }}
+        >
+          About Me
+        </motion.h1>
+      </motion.div>
       <div className="row">
-
-        <div className="column">
+        <motion.div
+          className="column"
+          ref={infoRef}
+          initial="hidden"
+          animate={infoInView ? "visible" : "hidden"}
+          variants={fadeInUp}
+          transition={{ duration: 0.5 }}
+        >
           <div className="about-info">
-            <h3>My introduction</h3>
+            <motion.h3
+              initial="hidden"
+              animate={infoInView ? "visible" : "hidden"}
+              variants={slideInRight}
+              transition={{ duration: 0.5 }}
+            >
+              My Introduction
+            </motion.h3>
             <p>
-              I am a software developer with a good understanding of both
-              front-end and back-end knowledge. While I do currently have a
-              better understanding of frontend, I am working to understand C#
-              language along with its frameworks such as ASP.NET and Blazor.
-              This will allow me to develop full-stack projects.
+              I am a software developer with a solid foundation in both front-end and back-end technologies. I am currently enhancing my skills in Express and MongoDB, which will contribute to my upcoming Full-Stack MERN project.
             </p>
           </div>
-        </div>
+        </motion.div>
         <div className="column">
-          <div className="skills-box">
+          <motion.div
+            className="skills-box"
+            ref={skillsRef}
+            initial="hidden"
+            animate={skillsInView ? "visible" : "hidden"}
+            variants={fadeInUp}
+            transition={{ duration: 0.5 }}
+          >
             <div className="skills-header">
-              <h3>Frontend</h3>
+              <motion.h3
+                initial="hidden"
+                animate={skillsInView ? "visible" : "hidden"}
+                variants={slideInLeft}
+                transition={{ duration: 0.5 }}
+              >
+                Frontend
+              </motion.h3>
             </div>
             <div className="skills-list">
-              <span>HTML</span>
-              <span>JavaScript</span>
-              <span>React</span>
-              <span>Tailwind</span>
-              <span>Github</span>
-              <span>Visual Studio Code</span>
-              <span>CSS</span>
+              {skillSpans.slice(0, 7).map((skill, index) => (
+                <motion.span
+                  key={index}
+                  initial="hidden"
+                  animate={skillsInView ? "visible" : "hidden"}
+                  variants={skill.direction === 'left' ? slideInLeft : slideInRight}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  {skill.text}
+                </motion.span>
+              ))}
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="column">
-          <div className="skills-box">
+          <motion.div
+            className="skills-box"
+            ref={skillsRef}
+            initial="hidden"
+            animate={skillsInView ? "visible" : "hidden"}
+            variants={fadeInUp}
+            transition={{ duration: 0.5 }}
+          >
             <div className="skills-header">
-              <h3>Backend</h3>
+              <motion.h3
+                initial="hidden"
+                animate={skillsInView ? "visible" : "hidden"}
+                variants={slideInRight}
+                transition={{ duration: 0.5 }}
+              >
+                Backend
+              </motion.h3>
             </div>
             <div className="skills-list">
-              <span>Python</span>
-              <span>C#</span>
-              <span>.NET</span>
-              <span>ASP.NET</span>
-              <span>Blazor</span>
-              <span>MySQL</span>
+              {skillSpans.slice(7).map((skill, index) => (
+                <motion.span
+                  key={index + 7}
+                  initial="hidden"
+                  animate={skillsInView ? "visible" : "hidden"}
+                  variants={skill.direction === 'left' ? slideInLeft : slideInRight}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  {skill.text}
+                </motion.span>
+              ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
