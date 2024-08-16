@@ -4,6 +4,7 @@ import "./App.css";
 import About  from "./Sections/About/About";
 import Footer from "./Components/Footer/Footer";
 import Nav from "./Components/Nav/Nav";
+import ContactMe from "./Sections/ContactMe/ContactMe";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Home />
         <About />
         <Projects />
-        
+        <ContactMe/>
         <Footer />
       </div>
     </div>
