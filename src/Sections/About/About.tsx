@@ -39,6 +39,7 @@ const About: React.FC = () => {
     { text: 'HTML', direction: 'left' },
     { text: 'CSS', direction: 'right' },
     { text: 'JavaScript', direction: 'left' },
+    { text: 'TypeScript', direction: 'left' },
     { text: 'React', direction: 'right' },
     { text: 'Tailwind', direction: 'left' },
     { text: 'GitHub', direction: 'right' },

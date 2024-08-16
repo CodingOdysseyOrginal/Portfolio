@@ -1,4 +1,178 @@
-.Projects{
-    background-color: steelblue;
-    height: 150vh;
+.Projects {
+  background: linear-gradient(to right, #007bff, #00aaff);
+  min-height: 100vh;
+  padding: 40px;
+  color: #fff;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-card {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  height: 450px; 
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.project-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85); 
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  transform: translateY(100%);
+  transition: transform 0.3s, opacity 0.3s;
+  max-height: 100%; 
+  overflow-y: auto; 
+}
+
+.project-card:hover .project-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.project-name {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.project-description {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.project-technologies {
+  margin: 5px 0;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.project-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.project-link {
+  display: inline-block;
+  background-color: #00aaff;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.project-link:hover {
+  background-color: #007bff;
+  transform: scale(1.1);
+}
+
+.project-link:active {
+  transform: scale(1);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .projects-container {
+    gap: 15px;
+  }
+
+  .project-card {
+    width: 100%;
+    height: 400px; 
+  }
+
+  .project-name {
+    font-size: 1.5rem; 
+  }
+
+  .project-description {
+    font-size: 1rem; 
+  }
+
+  .project-technologies {
+    font-size: 0.9rem; 
+  }
+
+  .project-link {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .projects-container {
+    gap: 10px;
+  }
+
+  .project-card {
+    width: 100%;
+    height: 350px; 
+  }
+
+  .project-name {
+    font-size: 1.2rem; 
+  }
+
+  .project-description {
+    font-size: 0.9rem; 
+  }
+
+  .project-technologies {
+    font-size: 0.8rem; 
+  }
+
+  .project-link {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
 }
