@@ -5,7 +5,6 @@ import './ContactMe.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
@@ -25,22 +24,12 @@ const ContactMe: React.FC = () => {
   const phoneNumber = "07795934091";
   const emailAddress = "christopher.oconnor1@hotmail.com";
 
-
   const { ref: contactRef, inView: contactInView } = useInView({
-   
-    threshold: 0.1, 
+    threshold: 0.1,
   });
 
   return (
-    <motion.div
-      id="Contact"
-      className="Contact"
-      ref={contactRef}
-      initial="hidden"
-      animate={contactInView ? "visible" : "hidden"}
-      variants={fadeInUp}
-      transition={{ duration: 0.5 }}
-    >
+    <div id="Contact" className="Contact" ref={contactRef}>
       <h2>Contact Us</h2>
       <div className="container">
         <motion.div
@@ -58,7 +47,7 @@ const ContactMe: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <FontAwesomeIcon icon={faPhone} className="Icon" />
-            <a href={`tel:${phoneNumber}`} className="link">
+            <a href={`tel:${phoneNumber}`} className="link" aria-label={`Call ${phoneNumber}`}>
               {phoneNumber}
             </a>
           </motion.div>
@@ -70,13 +59,13 @@ const ContactMe: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <FontAwesomeIcon icon={faEnvelope} className="Icon" />
-            <a href={`mailto:${emailAddress}`} className="link">
+            <a href={`mailto:${emailAddress}`} className="link" aria-label={`Email ${emailAddress}`}>
               {emailAddress}
             </a>
           </motion.div>
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

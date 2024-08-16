@@ -4,6 +4,7 @@ import "./Home.css";
 import Myself from "./Img/me.jpg";
 import Typed from "typed.js";
 import { motion } from 'framer-motion';
+import CV from './Img/Christopher.cv.pdf'
 
 
 const fadeInUp = {
@@ -82,7 +83,7 @@ export function Home() {
           variants={fadeInUp}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <a href="img/Christopher.cv.pdf" download="img/Christopher.cv.pdf">
+          <a href={CV} download={CV}>
             <button className="btn">Download CV <i className="uil uil-file-alt"></i></button>
           </a>
         </motion.div>
