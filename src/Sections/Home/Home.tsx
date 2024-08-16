@@ -82,7 +82,7 @@ export function Home() {
           variants={fadeInUp}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <a href={CV} download="Christopher_OConnor_CV.pdf">
+          <a href={CV} download="Christopher.cv.pdf">
             <button className="btn">Download CV <i className="uil uil-file-alt"></i></button>
           </a>
         </motion.div>
